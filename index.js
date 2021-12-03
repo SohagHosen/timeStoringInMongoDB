@@ -22,15 +22,15 @@ async function run() {
       //current date
       const now = new Date();
 
-      const olderDate = moment(now).subtract(10, "minutes").toDate();
+      const minus10 = moment(now).subtract(10, "minutes").toDate();
 
-      const futureDate = moment(now).add(10, "minutes").toDate();
+      const plus10 = moment(now).add(10, "minutes").toDate();
 
       const result = await times
         .find({
           time: {
-            $gte: olderDate,
-            $lt: futureDate,
+            $gte: minus10,
+            $lt: plus10,
           },
         })
         .toArray();

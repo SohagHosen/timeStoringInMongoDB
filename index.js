@@ -18,7 +18,7 @@ async function run() {
     const times = database.collection("times");
     // create a document to insert
 
-    app.prependOnceListener("/time", async (req, res) => {
+    app.post("/time", async (req, res) => {
       //current date
       const now = new Date();
 
